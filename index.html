@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskMaster</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container left-container">
+        <div class="team-section">
+            <h1>Teams</h1>
+            <div id="teamManagement">
+                <input type="text" id="teamName" placeholder="Team Name" required>
+                <button type="button" onclick="addTeamMember()">Add Team Member</button>
+                <button type="button" onclick="saveTeam()">Save Team</button>
+                <button type="button" onclick="loadTeams()">Load Team</button>
+                <button type="button" onclick="editTeam()">Edit Team</button>
+                <div id="teamMembersContainer">
+                    <!-- Team members will be added here -->
+                </div>
+            </div>
+        </div>
+
+        <div class="sprint-length-section">
+            <h1>Sprint Length in Days</h1>
+            <form id="sprintForm">
+                <input type="number" id="maxDays" name="maxDays" placeholder="Number of days" required step="1">
+            </form>
+        </div>
+    </div>
+
+    <div class="container">
+        <h1>TaskMaster</h1>
+        <form id="taskForm">
+            <label for="numTasks">Number of tasks:</label>
+            <input type="number" id="numTasks" name="numTasks" required step="1">
+
+            <div id="taskDaysContainer" class="task-inputs"></div>
+            <button type="button" onclick="generateTaskInputs()">Generate Task Inputs</button>
+            <button type="submit">Submit</button>
+        </form>
+        <button type="button" onclick="displayResultsHistory()">Show Results History</button>
+        <div id="output" class="result-container"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
